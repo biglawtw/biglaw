@@ -1,0 +1,148 @@
+/*
+ * Showup.js jQuery Plugin
+ * http://github.com/jonschlinkert/showup
+ *
+ * Copyright (c) 2013 Jon Schlinkert, contributors
+ * Licensed under the MIT License (MIT).
+ */
+
+/**
+ * Docs navbar transitions effects
+ */
+
+.navbar {
+  -webkit-transition: -webkit-transform .5s .5s, background .5s, color .1s;
+     -moz-transition:    -moz-transform .5s .5s, background .5s, color .1s;
+       -o-transition:      -o-transform .5s .5s, background .5s, color .1s;
+          transition:         transform .5s .5s, background .5s, color .1s;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.navbar-tall,
+.navbar-show {
+  opacity: 1;
+  -webkit-transition: -webkit-transform .25s, background 2s, color .3s;
+     -moz-transition:    -moz-transform .25s, background 2s, color .3s;
+       -o-transition:      -o-transform .25s, background 2s, color .3s;
+          transition:         transform .25s, background 2s, color .3s;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.navbar-hide {
+  opacity: 0;
+  -webkit-transition: -webkit-transform .2s, background .3s, color .3s, opacity 0 .3s;
+     -moz-transition:    -moz-transform .2s, background .3s, color .3s, opacity 0 .3s;
+       -o-transition:      -o-transform .2s, background .3s, color .3s, opacity 0 .3s;
+          transition:         transform .2s, background .3s, color .3s, opacity 0 .3s;
+  -webkit-transform: translate(0, -80px);
+      -ms-transform: translate(0, -80px);
+          transform: translate(0, -80px);
+}
+
+
+.navbar-tall,
+.navbar-short,
+.navbar-tall .navbar-brand,
+.navbar-short .navbar-brand,
+.navbar-tall .navbar-nav > li > a,
+.navbar-short .navbar-nav > li > a {
+  -webkit-transition: all 0.2s linear;
+          transition: all 0.2s linear;
+}
+
+.navbar-short {
+  min-height: 40px;
+}
+.navbar-short .navbar-brand {
+  font-size: 16px;
+  padding: 13px 15px 10px;
+}
+.navbar-short .navbar-nav > li > a {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+
+.navbar-tall {
+  min-height: 70px;
+}
+.navbar-tall .navbar-brand {
+  font-size: 24px;
+  padding: 25px 15px;
+}
+.navbar-tall .navbar-nav > li > a {
+  padding-top: 25px;
+}
+
+
+
+/**
+ * Docs Buttons
+ */
+
+/* Demo buttons are all <button> tags, so
+ * lets style these directly.
+ */
+.back-to-top {
+  float: right !important;
+}
+
+
+/* Fixed button, bottom right */
+.btn-fixed-bottom {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  display: none;
+}
+
+
+/* Toggles navbar classes */
+.btn-hide-show {
+  margin-right: 10px;
+}
+
+
+/* Light theme */
+.btn-light {
+  color: #555;
+  background-color: rgba(0, 0, 0,.1);
+}
+.btn-light:hover {
+  color: #111;
+  background-color: rgba(0, 0, 0,.25);
+}
+
+/* Dark theme */
+.btn-dark {
+  color: #fff;
+  background-color: rgba(0, 0, 0,.5);
+}
+.btn-dark:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0,.9);
+}
+
+
+
+/* Buttons displayed throughout the content */
+.btn-showup {
+  position: relative;
+  color: #fff;
+  font-weight: normal;
+  background-color: #463265;
+  border-color: #3F2961;
+}
+.btn-showup:focus,
+.btn-showup:hover,
+.btn-showup:focus {
+  color: #fff;
+  outline: none;
+  background-color: #39235A;
+  border-color: #39235A;
+}
+

@@ -1,0 +1,141 @@
+body {
+  font-family: Microsoft JhengHei, Verdana;
+  padding-top: 100px;
+  position:relative;
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+@media (max-width: 767px) {
+    body {
+	  font-family: Microsoft JhengHei, Verdana;
+	  padding-top: 80px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+    .lead {
+        font-size:20px;
+    }
+}
+ 
+@media screen and (max-width: 568px) {
+    .lead {
+        font-size:0.8em;
+    }
+}
+
+.navbar-input-group {
+  font-size: 0px; /*removes whitespace between button and input*/
+}
+
+.navbar-input-group input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.navbar-input-group .btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 0px;
+}
+
+pre {
+  font-family: MingLiU, 細明體, Lucida;
+  font-size: 18px;
+  border: none; !important
+  border-width: 0px;
+  -webkit-box-shadow: 0px 0px;
+  box-shadow: 0px 0px;
+  background-color: rgba(0,0,0,0.0);
+  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+
+.p {
+  height: auto;
+  max-height: 500px;
+  overflow: auto;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  white-space: pre !important;
+}
+
+.btn-circle {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  padding: 15px;
+  /*font-size: 12px;
+  line-height: 1.42;*/
+  border-radius: 100px;
+}
+
+.btn-huge {
+   padding: 30px 10px;
+   font-size: 20px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  overflow-x: hidden; !important
+}
+
+div > li {
+    margin-left: 20px;
+}
+
+iframe[seamless]{
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+}
+
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+	cursor:default;
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+.list-collapse a:after {
+    content: "\f0d7";    
+	font-family: FontAwesome;
+    float: right; 
+    /*color: grey;*/
+}
+.list-collapse  a.collapsed:after {
+    content: "\f0d9";
+}
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right:30px;
+    display:none;
+}
+
+.affix-top {
+	position:absolute;
+}
+
+.affix {
+	position:fixed;
+	top:100px;
+}
+
+.affix-bottom {
+	position:absolute;
+}

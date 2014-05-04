@@ -1,0 +1,12 @@
+#! /bin/sh
+#
+# Created by configure
+
+LIBS='-lrt -lpthread ' \
+'./configure' \
+'--disable-option-checking' \
+'--prefix=/usr/local' \
+'--enable-dependency-tracking' \
+'--cache-file=/dev/null' \
+'--srcdir=.' \
+"$@"
