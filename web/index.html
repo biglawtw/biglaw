@@ -1,216 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_TW">
   <head>
     <meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh_TW">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--<link rel="shortcut icon" href="../../assets/ico/favicon.ico">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+    <meta name="description" content="A Web based Law Analysis Service.">
+    <meta name="author" content="MeiGic">
+      <!-- GA -->
+      <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+          ga('create', 'UA-52885578-1', 'auto');
+          ga('send', 'pageview');
+
+      </script>
     <title>BigLaw</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+	
+	<link rel="shortcut icon" href="favicon.ico" />
+	
+	<!-- jquery ui CSS -->
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+	
+	<!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Bootstrap vertical alignment CSS -->
+    <link href="css/bootstrap-vertical-alignment.css" rel="stylesheet">
+	
+	<!-- Normalize CSS -->
+    <link href="css/normalize.css" rel="stylesheet">
 	
 	<!-- Awesome CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+	<!-- Showup CSS -->
+	<link href="css/showup.css" rel="stylesheet">
+	
+	<!-- Select2 CSS -->
+	<link href="css/select2.css" rel="stylesheet">
+	<!-- Select2 Bootstrap CSS -->
+	<link href="css/select2-bootstrap-another.css" rel="stylesheet">
+	
+	<!-- datepicker CSS -->
+	<link rel="stylesheet" href="css/datepicker3.css">
+	
+	<!-- footable CSS -->
+	<link rel="stylesheet" href="css/footable.core.min.css">
+	
+	<!-- Custom styles for this template -->
     <link href="css/biglaw.css" rel="stylesheet">
 	
-	<!-- Showup javascript -->
-	<link href="css/showup.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
+	<!-- laweasyread-front styles CSS -->
+    <link href="plugins/laweasyread-front/stylesheets/main.css" rel="stylesheet">
+	
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.1/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
 
   <body>
-	<!--header-->
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top btn-lg unselectable" role="navigation">
-      <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<span class="sr-only">開關導航</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="index.html"><span class="navbar-brand"><i class="fa fa-bar-chart-o"></i> BigLaw</span></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">首頁</a></li>
-			<li class="dropdown">
-              <a href="#" class="dropdown-toggle collapse" data-toggle="dropdown">法律條文 <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="http://law.moj.gov.tw/LawClass/LawClassListN.aspx?TY=01000000">憲法</a></li>
-                <li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=B0000001">民法</a></li>
-                <li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=B0010001">民事訴訟法及相關法</a></li>
-				<li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=C0000001">刑法</a></li>
-				<li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=C0010001">刑事訴訟法及相關法</a></li>
-				<li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=A0030055">行政法及行政訴訟相關法</a></li>
-              </ul>
-            </li>
-			
-			<!--for desktop & tablet-->
-			<!--
-			<form class="navbar-form navbar-left navbar-input-group hidden-xs" role="search">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="法律條文快速搜尋">
-					<button type="submit" class="btn btn-primary">搜尋</button>
-				</div>
-			</form>
-			-->
-			<!--for mobile-->
-			<!--
-			<form class="navbar-form navbar-center visible-xs" role="search">
-				<div class="form-group">
-					<div class="input-group input-group-lg">
-						<input type="text" class="form-control"  placeholder="法律條文快速搜尋">
-						<div class="input-group-btn">
-							<button type="submit" class="btn btn-primary">搜尋</button>
-						</div>
-					</div>
-				</div>
-			</form>
-			-->
-			
-			</ul>
-		  <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" id="#aboutus" class="accordion-toggle" data-toggle="collapse" data-target="#aboutusdetail" data-parent="#details">關於我們</a></li>
-            <li><a href="#" id="#datasource" class="accordion-toggle" data-toggle="collapse" data-target="#datasourcedetail" data-parent="#details">資料來源</a></li>
-			<li><a href="#" id="#license" class="accordion-toggle" data-toggle="collapse" data-target="#licensedetail" data-parent="#details">授權條款</a></li>
-		  </ul>
-		  <div id="details">
-			<div class="row collapse" id="aboutusdetail">
-				<div class="thumbnail pull-right">
-					<p><b>&nbsp;&nbsp;&nbsp;&nbsp;開放法律判決智慧檢索與分析系統</b><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;這是一套使用Hadoop大量分析政府提供之法律裁判書的智慧檢索系統<br>
-					使您在面對法律問題及學術探討時，能更方便快速的找到所需資訊<br>
-					祝您使用的愉快！</p>
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;自放社會Selffnck是隸屬於MeiGic工作室的特殊專案開發團隊。</p>
-				</div>
-			</div>
-			<div class="row collapse" id="datasourcedetail">
-				<div class="thumbnail pull-right">
-					本站資料來源均為政府開放資料，如下列：<br>
-					<li><a href="http://jirs.judicial.gov.tw/FJUD/">司法院法學資料檢索系統</a></li>
-					<li><a href="http://law.moj.gov.tw/">法務部全國法規資料庫</a></li>
-					本站開發均使用OpenSource軟體，如下列：<br>
-					<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
-					<li><a href="http://jquery.com/">jQuery</a></li>
-				</div>
-			</div>
-			<div class="row collapse" id="licensedetail">
-				<div class="thumbnail pull-right">
-					<p>Copyright 2014 Selffnck</p>
-
-					<p>Licensed under the Apache License, Version 2.0 (the "License");<br>
-					you may not use this file except in compliance with the License.<br>
-					You may obtain a copy of the License at</p>
-
-					<p>http://www.apache.org/licenses/LICENSE-2.0</p>
-
-					<p>Unless required by applicable law or agreed to in writing, software<br>
-					distributed under the License is distributed on an "AS IS" BASIS,<br>
-					WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>
-					See the License for the specific language governing permissions and<br>
-					limitations under the License.</p>
-				</div>
-			</div>
-		  </div>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-	<!--header-->
-
-    <div class="container text-center">
-      <!-- Main component for a primary marketing message or call to action -->
-	  <h4 id="search"></h4>
-      <div class="jumbotron">
-	  <h1><i class="fa fa-bar-chart-o fa-1x"></i> BigLaw</h1>
-	  <!--<h1>開放法律判決智慧檢索與分析系統</h1>-->
-      <h3>基於過往的法律裁判書，為您提供即時的分析服務</h3>
-		<br>
-			<form class="navbar-form" role="search" name="form" action="index.php" method="get">
-			  <div class="form-group">
-			  <div class="row">
-				<div class="col-lg-10 col-lg-offset-1">
-					<div class="input-group input-group-lg">
-						<input type="text" class="form-control" name="keyword" id="keyword" placeholder="輸入您想搜尋的關鍵字">
-						<div class="input-group-btn">
-							<li class="btn btn-primary" data-toggle="collapse" data-target="#extrafields"><i class="fa fa-plus"></i></li>
-						</div>
-					</div>
-				</div>
-			  </div>
-			  <div class="row collapse" id="extrafields">
-			    <!--for desktop & tablet-->
-				<div class="hidden-xs hidden-sm col-lg-10 col-lg-offset-1">
-					<div class="input-group">
-						<span class="input-group-addon">裁判日期</span>
-						<input type="text" class="form-control" id="date" placeholder="例：101/01/01">
-						<span class="input-group-addon">裁判字號</span>
-						<input type="text" class="form-control" id="no" placeholder="例：101,重上,100">
-						<span class="input-group-addon">裁判案由</span>
-						<input type="text" class="form-control" id="case" placeholder="例：損害賠償">
-					</div>
-				</div>
-				<!--for mobile-->
-				<div class="visible-xs visible-sm col-lg-10 col-lg-offset-1">
-					<div class="input-group">
-						<span class="input-group-addon">裁判日期</span>
-						<input type="text" class="form-control" id="date" placeholder="例：101/01/01">
-					</div>
-					<div class="input-group">
-						<span class="input-group-addon">裁判字號</span>
-						<input type="text" class="form-control" id="no" placeholder="例：101,重上,100">
-					</div>
-					<div class="input-group">
-						<span class="input-group-addon">裁判案由</span>
-						<input type="text" class="form-control" id="case" placeholder="例：損害賠償">
-					</div>
-				</div>
-			  </div>
-			  </div>
-			  <br><br>
-			  <button type="submit" class="btn btn-danger btn-circle"><i class="fa fa-search fa-3x"></i></button>
-			</form>
-      </div>
-    </div> <!-- /container -->
-	
-	<!--footer-->
-    <!-- Back-to-top Example -->
-    <!--<a href="#" class="btn back-to-top btn-light btn-fixed-bottom"> <span class="glyphicon glyphicon-chevron-up"></span> </a>-->
-    <!-- Back-to-top Example -->
-    <!--<a href="#" style="right: 70px;" class="btn back-to-top btn-dark btn-fixed-bottom"> <span class="glyphicon glyphicon-chevron-up"></span> </a>-->
-	<!-- Back-to-top buttons -->
-	<a id="back-to-top" href="#" class="btn btn-circle btn-success back-to-top" role="button">
-	<i class="fa fa-chevron-up fa-3x"></i>
-	</a>
-	<footer class="text-center">
-      <p>&copy; Selffnck@MeiGic 2014</p>
-    </footer>
-	<!--footer-->
+	<div id="wrap">
+		<div id="header"></div>
+		<div class="container">
+			<div class="hidden" id="loading"></div>
+			<div class="bs-callout bs-callout-danger text-center hidden" id="error"></div>
+			<button class="btn btn-light back-to-top btn-fixed-bottom"><i class="fa fa-chevron-up"></i></button>
+		</div>
+		<div id="context"></div>
+		<div id="footer"></div>
+	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/biglaw.js"></script>
-	<script src="js/showup.js"></script>
+	<!-- core plugins js-->
+    <script src="js/jquery.min.js"></script>
 	<script>
-		$().showUp('.navbar', {upClass: 'navbar-show', downClass: 'navbar-hide'});
+		$.support.cors = true;
+		$.ajaxSetup({
+			cache: true
+		});
 	</script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/highcharts/standalone-framework.js"></script>
+	<script src="js/highcharts/highcharts.js"></script>
+	<script src="js/highcharts/grid-light.js"></script>
+	<script src="js/TweenMax.min.js"></script>
+	<script src="js/jquery.gsap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/fastclick.js"></script>
+	<script>
+		$(function() {
+			FastClick.attach(document.body);
+		});
+	</script>
+	<!-- extra plugins js-->
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/jquery.ba-hashchange.min.js"></script>
+	<script src="js/jquery.mousewheel.min.js"></script>
+	<script src="js/clamp.js"></script>
+	<!-- UI plugins js-->
+	<script src="js/jquery.fittext.js"></script>
+	<script>
+		$("body").fitText(100, { minFontSize: '20px', maxFontSize: '40px' });
+	</script>
+	<script src="js/spin.min.js"></script>
+	<script src="js/showup.js"></script>
+	<script src="js/select2.min.js"></script>
+	<script src="js/select2_locale_zh-TW.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/footable/footable.js"></script>
+	<script src="js/footable/footable.sort.js"></script>
+	<script src="js/footable/footable.filter.js"></script>
+	<script src="js/footable/footable.paginate.js"></script>
+	<!-- <script src="js/footable/footable.striping.js"></script> -->
+	<!-- custom js-->
+	<script src="js/biglaw.js"></script>
+	<script src="js/hashchange-ajaxload.js"></script>
+	<script src="js/biglawsearchform.js" type="text/javascript"></script>
+	<!-- laweasyread-front plugins js-->
+	<!-- <script src="plugins/laweasyread-front/javascripts/laweasyread.js" type="text/javascript"></script>
+	<script src="plugins/laweasyread-front/javascripts/embedded2.js" type="text/javascript"></script> -->
+	<script src="plugins/laweasyread-front/javascripts/parseInt.js" type="text/javascript"></script>
+    <script src="plugins/laweasyread-front/javascripts/pcodes.js" type="text/javascript"></script>
+    <script src="plugins/laweasyread-front/javascripts/aliases.js" type="text/javascript"></script>
+    <script src="plugins/laweasyread-front/javascripts/lyIDs.js" type="text/javascript"></script>
+    <script src="plugins/laweasyread-front/javascripts/courts.js" type="text/javascript"></script>
+    <script src="plugins/laweasyread-front/javascripts/LER.js" type="text/javascript"></script>
   </body>
 </html>

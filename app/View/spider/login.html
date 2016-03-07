@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8"/>
+    <title>任務管理</title>
+    <link href="<?php resource('css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php resource('css/bootstrap-theme.css'); ?>" rel="stylesheet"/>
+    <link href="<?php resource('style/default.css')?>" rel="stylesheet"/>
+
+    <script src="<?php resource('js/jquery-2.1.1.js'); ?>"></script>
+</head>
+<body>
+<?php partialView('header'); ?>
+<div id="login" class="container-fluid">
+    <div class="row main">
+        <div class="col-md-12">
+            <h1 class="page-header">登入</h1>
+
+            <form class="form-horizontal" method="post" action="<?=url('dologin' , 'spider')?>">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">帳號</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">密碼</label>
+
+                    <div class="col-md-10">
+                        <input class="form-control" type="password" name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button class="btn btn-default btn-primary btn-lg">
+                            登入
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<?php partialView('footer'); ?>
+</body>
+<script src="<?php resource('js/bootstrap.js'); ?>"></script>
+<script src="js/bootstrap.js"></script>
+</html>

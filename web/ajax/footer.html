@@ -1,0 +1,80 @@
+<!-- Site footer -->
+<div class="footer navbar navbar-fixed-bottom">
+    <div class="container text-center">
+		<hr>
+		<img src="imgs/meigic.png" style="width:100px;"></img>
+		<p>
+			&copy; MeiGic 2014 
+			<a href="#" data-toggle="modal" data-target="#about">關於我們</a>
+			<a href="#" data-toggle="modal" data-target="#t_and_c_m">服務條款</a>
+		</p>
+		<h6>Build <span id="buildversion"></span></h6>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="about" role="dialog" aria-labelledby="about_Label" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title" id="about_Label">關於我們</h4>
+			</div>
+			<div class="modal-body">
+				<ul>
+					<li>
+						<p>
+							MeiGic，源自於我們開發的第一款遊戲：RunningLamb
+							遊戲的主要角色，羊，牠的叫聲「Mei」
+							加上我們作品的宗旨：如同魔法般 帶來歡樂
+							結合作為MeiGic 活潑、創新、嚴謹 的精神象徵。
+						</p>
+					</li>
+					<li>
+						<p>
+							BigLaw，使用政府的公開資料為基礎，
+							如：司法院法學資料檢索系統、法務部全國法規資料庫、法務部律師管理系統等，
+							為尚未能決定是否要聘請律師、想要自己處理小額的法律案件、想了解過去裁判書的統計與分析資料之人士，
+							提供一個易於閱讀、易於使用、易於了解的智慧型裁判書檢索系統。
+						</p>
+					</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" role="dialog" aria-labelledby="t_and_c_m_Label" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title" id="t_and_c_m_Label">服務條款</h4>
+			</div>
+			<div class="modal-body">
+				<ul>
+					<li>
+					當您使用本服務條款時，即表示您已閱讀、瞭解並同意本服務條款之所有內容與約定，並完全接受本服務現有與未來衍生的服務項目及內容。
+					</li>
+					<li>
+					本站有權於任何時間基於需要而修訂或變更本服務條款之內容，並取代先前的內容，修改後之服務條款將會公告於本站，恕不另行通知您，建議您隨時注意該等修改或變更。
+					</li>
+					<li>
+					若您於任何修改或變更之後繼續使用本服務，即視為您已經閱讀、瞭解且同意接受修改或變更後之服務條款內容。
+					</li>
+					<li>
+					若您不同意上述服務條款修改變更方式，或不接受本服務條款任一條款，您應立即停止使用本服務。
+					</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">關閉</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+	$("#buildversion").html(version);
+</script>

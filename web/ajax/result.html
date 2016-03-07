@@ -1,0 +1,378 @@
+<div class="container text-center">
+	<div class="hidden" id="elseloading">
+		<h1 class="text-primary">分析中，請稍等待<br>
+			<small><i class="fa fa-clock-o"></i> 更多的條件，更少的時間</small>
+		</h1>
+	</div>
+	<div class="hidden" id="empty">
+		<h1 class="text-danger">很抱歉，沒有結果</h1>
+		<button class="btn btn-danger btn-circle back"><i class="fa fa-arrow-left fa-3x"></i></button>
+	</div>
+	<div class="hidden" id="search">
+		<form role="form" class="navbar-form" id="searchform" action="/">
+			<div class="row">
+			<div class="col-lg-10 col-lg-offset-1">
+				<div class="input-group input-group-lg">
+					<input type="text" class="form-control" name="keyword" id="keyword" placeholder="請輸入全文檢索關鍵字" required>
+					<div class="input-group-btn">
+						<li class="btn btn-primary" data-toggle="collapse" data-target="#extrafields"><i class="fa fa-plus"></i></li>
+						<button type="submit" class="btn btn-danger" id="searchbtn"><i class="fa fa-search"></i></button>
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div class="collapse" id="extrafields">
+			  <div class="form-group">
+				<br>
+				<div class="row col-lg-10 col-lg-offset-1">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="input-group">
+							<span class="input-group-addon">法院名稱</span>
+							<select type="text" class="form-control select2" id="courtname" data-placeholder="請選擇法院名稱" placeholder="請選擇法院名稱">
+								<option></option>
+							</select>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="input-group">
+							<span class="input-group-addon">裁判類別</span>
+							<div class="btn-group pull-left" data-toggle="buttons" id="casesys">
+							  <label class="btn btn-default">
+								<input type="radio" name="casesys" id="N" value="N"> 不分類
+							  </label>
+							  <label class="btn btn-danger">
+								<input type="radio" name="casesys" id="M" value="M"> 刑事
+							  </label>
+							  <label class="btn btn-primary">
+								<input type="radio" name="casesys" id="V" value="V"> 民事
+							  </label>
+							  <label class="btn btn-warning">
+								<input type="radio" name="casesys" id="A" value="A"> 行政
+							  </label>
+							  <label class="btn btn-success">
+								<input type="radio" name="casesys" id="P" value="P"> 公懲
+							  </label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row col-lg-10 col-lg-offset-1">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<br>
+						<div class="input-group">
+							<span class="input-group-addon">判決字號</span>
+							<input type="text" class="form-control" placeholder="年份" id="caseyear">
+							<input type="text" class="form-control select2" id="caseword" data-placeholder="輸入或選擇常用字別" placeholder="輸入或選擇常用字別">
+							<!--<input type="text" class="form-control" placeholder="或輸入字別" id="caseword">-->
+							<input type="text" class="form-control" placeholder="號" id="casenum">
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<br>
+						<div class="input-group">
+							<span class="input-group-addon">判決案由</span>
+							<input type="text" class="form-control" id="casereason" placeholder="例：損害賠償">
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<br>
+						<div class="input-group">
+							<span class="input-group-addon">判決日期</span>
+							<input type="text" class="form-control" id="startdate" placeholder="開始日期">
+							<input type="text" class="form-control" id="enddate" placeholder="結束日期">
+						</div>
+					</div>
+				</div>
+			  </div>
+		  </div>
+		  <br>
+		</form>
+	</div>
+	<div class="hidden" id="general">
+		<div id="list">
+			<!-- <h1>裁判書列表</h1> -->
+			<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-lg-3">
+						<span>全部</span>
+						<span id="casecount"></span>
+						<span>筆</span>
+					</div>
+					<div class="col-lg-3">
+						<div id="dataloadingdiv">
+							<i class="fa fa-circle-o-notch fa-spin" id="dataloading"></i>
+							已載入 <span id="dataloadpercent"></span> %
+							<button type="button" class="btn btn-default" id="switchdataloading"><i class="fa fa-pause"></i></button>
+						</div>
+						<div id="dataloadeddiv">
+							已載入完成<i class="fa fa-check"></i>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<span>目前</span>
+						<span id="resultcount"></span>
+						<span>筆</span>
+					</div>
+					<div class="col-lg-3">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-filter"></i></span>
+							<input class="form-control filter-status select2" id="filterselect" data-placeholder="選取或輸入篩選條件" placeholder="選取或輸入篩選條件">
+						</div>
+					</div>
+				</div>
+			</div>
+				<table class="table table-hover toggle-circle" id="resulttable">
+					<thead>
+						<tr>
+							<th data-hide="all">
+								編號
+							</th>
+							<th data-hide="phone" data-type="numeric">
+								裁判日期
+							</th>
+							<th data-toggle="true" data-sort-initial="true">
+								裁判字號
+							</th>
+							<th>
+								裁判案由
+							</th>
+							<th data-hide="phone,tablet">
+								判決法院
+							</th>
+							<th data-hide="all">
+								相關法律
+							</th>
+							<th data-hide="all" data-sort-ignore="true">
+								摘要
+							</th>
+							<th data-hide="phone" data-sort-ignore="true">
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- <tr>
+							<td>703</td>
+							<td data-value="1030529">民國103年5月29日</td>
+							<td>103,台覆,26</td>
+							<td>違反貪污治罪條例</td>
+							<td>司法院－刑事補償</td>
+							<td>貪污治罪條例、刑事訴訟法、刑事補償法</td>
+							<td><a type="button" type="button" class="btn btn-success" href="#result&id=1">閱讀裁判書</a></td>
+						</tr>-->
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="7">
+								<ul class="pagination pagination-centered" id="paging"></ul>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+		<div id="charts">
+			<!-- <h1>統計圖表</h1> -->
+			<div class="carousel">
+				<div class="carousel-inner">
+					<ul class="nav nav-tabs" role="tablist" id="chartstabs">
+						<!-- <li class="active"><a href="#caselawpie" role="tab" data-toggle="tab">相關法律比例</a></li> -->
+						<li class="active"><a href="#casecourtpie" role="tab" data-toggle="tab">判決法院比例</a></li>
+						<li><a href="#judgetimespline" role="tab" data-toggle="tab">判決時間線圖</a></li>
+					</ul>
+					<br>
+					<div class="tab-content" id="chartstabscontent">
+						<!-- <div class="tab-pane fade in active" id="caselawpie">
+							<div id="caselawpiecontainer"></div>
+						</div> -->
+						<div class="tab-pane fade in active" id="casecourtpie">
+							<div id="casecourtpiecontainer"></div>
+						</div>
+						<div class="tab-pane fade" id="judgetimespline">
+							<div id="judgetimesplinecontainer"></div>
+						</div>
+					</div>
+				</div>
+				<a class="btn btn-link carousel-control-left" id="prevtab" type="button"><i class="fa fa-chevron-left fa-3x"></i></a>
+				<a class="btn btn-link carousel-control-right" id="nexttab" type="button"><i class="fa fa-chevron-right fa-3x"></i></a>
+			</div>
+		</div>
+	</div>
+	<div class="hidden" id="detail">
+		<!-- <h1>裁判書內容</h1> -->
+		<div class="row container">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 pull-right" id="sidebar" data-spy="affix" data-offset-top="100" data-offset-bottom="60">
+				<div class="affix">
+					<div class="well text-left" id="caseinfo">
+						<i class="fa fa-dot-circle-o"></i>
+						裁判法院
+						<i class="fa fa-angle-double-right"></i>
+							<span id="Location"></span><!-- 臺灣高等法院 -->
+						<br>
+						<i class="fa fa-dot-circle-o"></i>
+						裁判類型
+						<i class="fa fa-angle-double-right"></i>
+							<span id="Type"></span><!-- 刑事 -->
+						<br>
+						<i class="fa fa-dot-circle-o"></i>
+						裁判字號
+						<i class="fa fa-angle-double-right"></i>
+							<span id="Word"></span><!-- 103,上易,43 -->
+						<br>
+						<i class="fa fa-dot-circle-o"></i>
+						裁判日期
+						<i class="fa fa-angle-double-right"></i>
+							<span id="Judgedate"></span><!-- 1030311 -->
+						<br>
+						<i class="fa fa-dot-circle-o"></i>
+						裁判案由
+						<i class="fa fa-angle-double-right"></i>
+							<span id="Judgereason"></span><!-- 妨害名譽 -->
+						<br>
+					</div>
+					<div id="toolbar">
+						<div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default back"><i class="fa fa-arrow-left"></i></button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default" id="plus"><i class="fa fa-search-plus"></i></button>
+								<button type="button" class="btn btn-default" id="minus"><i class="fa fa-search-minus"></i></button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default" id="expand"><i class="fa fa-expand"></i></button>
+								<button type="button" class="btn btn-default" id="compress"><i class="fa fa-compress"></i></button>
+							</div>
+						</div>
+						<br>
+						<div id="casechapter"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 pull-left" id="case">
+				<!-- <div class="list-collapse">
+					<a class="list-group-item list-group-item-default" data-toggle="collapse" data-target="#casecontextdiv">
+						<strong>裁判全文</strong>
+					</a>
+				</div> -->
+				<div id="casecontextdiv" class="collapse in col-lg-offset-2 col-md-offset-1 col-sm-offset-1">
+					<pre class="casecontext" id="casecontext"></pre>
+					<a class="list-group-item" data-toggle="collapse" data-target="#casefact1div">
+						<pre class="casecontext text-primary" id="casefact1"></pre>
+					</a>
+					<div id="casefact1div" class="collapse in">
+						<pre class="casecontext" id="casefact1word"></pre>
+					</div>
+					<a class="list-group-item" data-toggle="collapse" data-target="#casefact2div">
+						<pre class="casecontext text-primary" id="casefact2"></pre>
+					</a>
+					<div id="casefact2div" class="collapse in">
+						<pre class="casecontext" id="casefact2word"></pre>
+					</div>
+					<pre class="casecontext" id="casetail"></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- /container -->
+<br>
+<script>
+	$(document).ready(function () {
+		var spinner = new Spinner().spin();
+		$("#elseloading")[0].appendChild(spinner.el);
+
+		$("#expand").on("click", function() {
+			$("#case").removeClass("col-lg-8").removeClass("col-md-8").addClass("col-lg-12").addClass("col-md-12");
+			$("#caseinfo").hide();
+			$("#casechapter").hide();
+		});
+		$("#compress").on("click", function() {
+			$("#case").removeClass("col-lg-12").removeClass("col-md-12").addClass("col-lg-8").addClass("col-md-8");
+			$("#caseinfo").show();
+			$("#casechapter").show();
+		});
+		
+		$("#plus").click(function() {
+			updatedcasefontsize(1);
+		});
+		$("#minus").click(function() {
+			updatedcasefontsize(-1);
+		});
+		
+		$(".back").click(function() {
+			window.history.back();
+		});
+
+		$("#switchdataloading").on("click", function() {
+			isdataloadpaused = !isdataloadpaused;
+			checkdataloadingstatus(true);
+		});
+
+		$("#filterselect").select2({
+			allowClear: true,
+			createSearchChoice:function(term, data) {
+				if ($(data).filter(function() {
+					return this.text.localeCompare(term)===0; }).length===0) {
+					return {id:term, text:term};
+				}
+			},
+			multiple: true,
+			data: []
+		});
+
+		$('#filterselect').change(function (e) {
+			var selecteddata = $('#filterselect').select2('data');
+			var filterstring = "";
+			var filtertextarray = [];
+			$.each(selecteddata, function(index, value) {
+				//console.log(value);
+				filtertextarray.push(value.text);
+			});
+			filterstring = filtertextarray.join(" ");
+			$('#resulttable').trigger('footable_filter', {
+				filter: filterstring
+			});
+			//console.log(filterstring);
+		});
+
+		$('table').footable().bind('footable_filtering', function (e) {
+			var selected = $('.filter-status').find(':selected').text();
+			if (selected && selected.length > 0) {
+				e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+				e.clear = !e.filter;
+			}
+		});
+		
+		$('table').footable().bind('footable_filtered', function (e) {
+			$(this).clearQueue();
+			$(this).stop();
+			resultcount();
+			destoryCharts();
+			buildcasecourtpiechart();
+			buildjudgetimesplinechart();
+		});
+
+		$('.clear-filter').click(function (e) {
+		  e.preventDefault();
+		  $('.filter-status').val('');
+		  $('#resulttable').trigger('footable_clear_filter');
+		});
+
+		$('#prevtab').on('click', function() {
+			$('#chartstabs').find('li').filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
+		});
+
+		$('#nexttab').on('click', function() {
+			$('#chartstabs').find('li').filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
+		});
+
+		$( "#chartstabs" ).on( "shown.bs.tab", function(e) {
+			resizecharts();
+		});
+		
+		$(window).resize(function() {
+			resizecharts();
+		});
+	});
+</script>
+<script src="ajax/result.js" type="text/javascript"></script>

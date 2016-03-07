@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="bl-spider">
+<head>
+    <meta charset="utf-8" />
+    <title>任務管理</title>
+    <link href="<?php resource('css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php resource('css/bootstrap-theme.css'); ?>" rel="stylesheet"/>
+    <link href="<?php resource('style/default.css');?>" rel="stylesheet"/>
+    <link href="<?php resource('style/bootstrap-prettify.css');?>" rel="stylesheet" />
+
+    <script src="<?php resource('js/jquery-2.1.1.js'); ?>"></script>
+    <script src="<?=url('baseurljs' , 'spider')?>" type="text/javascript"></script>
+    <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js" defer="defer"></script>
+    <script src="<?php resourcE('js/webjs/splitterSelector.js');?>" ></script>
+</head>
+<body>
+<?php partialView('header'); ?>
+<div class="container-fluid">
+    <div class="row main">
+        <div class="col-md-2 sidebar">
+            <?php partialView('sidebar' , $data); ?>
+        </div>
+        <div class="col-md-10 col-md-offset-2">
+            <div class="col-md-12">
+                <h2>分析器稽核</h2>
+                <form class="form-horizontal" action="<?=url('dochecksplitter' , 'spider')?>" method="post">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">選擇分析器</label>
+                        <div class="col-md-8">
+                            <select name="splitter" id="splitterSelector" class="form-control">
+                                <option value="0">請選擇</option>
+                                <?php
+                                foreach($data['splitter'] as $key => $value){
+                                ?>
+                                <option value="<?=$value['id']?>"><?=$value['filename']?> / <?=$value['uploadtime']?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-default btn-primary">
+                                確定
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <pre id="splitterContent" class="prettyprint linenums:1">
+
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<?php partialView('footer'); ?>
+</body>
+<script src="<?php resource('js/bootstrap.js'); ?>"></script>
+</html>

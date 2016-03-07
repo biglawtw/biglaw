@@ -1,0 +1,140 @@
+.LER-warning {
+    color: #888;
+    font-size: x-small;
+    cursor: help;
+}
+
+.LER-lawName,
+.LER-artNum,
+.LER-jyi,
+.LER-court ,
+.LER-trialNum,
+.LER-date,
+.LER-percent {
+    /* padding: 0 0.15em; */
+    /* font-weight: bold; */
+	/* border: 1px solid #ccc; */
+	font-family: MingLiU, 細明體, Lucida !important;
+}
+
+.LER-lawName:hover,
+.LER-artNum:hover,
+.LER-jyi:hover,
+.LER-court:hover,
+.LER-trialNum:hover,
+.LER-date:hover,
+.LER-percent:hover {
+	color: red;
+}
+
+/** 項類款目的格式
+  * 英文參照http://law.moj.gov.tw/Service/standard_en.aspx
+  */
+.LER-art-singlePara {
+    list-style-type: disc;
+    padding-left: 1.5em;
+}
+.LER-art-paragraphs {
+    list-style-type: upper-roman;
+    padding-left: 1.5em;
+}
+
+.LER-art-categories {
+    list-style-type: none;
+    padding-left: 4em;
+    text-indent: -4em;
+}
+
+.LER-art-subparagraphs {
+    list-style-type: none;
+    padding-left: 2em;
+    text-indent: -2em;
+}
+
+.LER-art-items {
+    list-style-type: none;
+    padding-left: 3em;
+    text-indent: -3em;
+}
+
+.LER-art-singlePara li,
+.LER-art-paragraphs li {
+    line-height: 150%;
+    padding: 0.15em 0;
+}
+
+/** 浮動視窗
+  */
+.LER-popup {
+    position: absolute;
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.LER-popup-head {
+    width: 0;
+    border: solid transparent;
+    border-width: 0.6em 1em 1em 1em;
+    border-bottom-color: #ddd;
+}
+
+.LER-popup-body {
+    border: 1px solid #ddd;
+    background-color: #ddd;
+}
+
+.LER-popup-pin {
+    float: right;
+    font-size: small;
+}
+
+.LER-popup-tabs {
+    margin: 0.1em 0 -1px 0.5em;
+    padding: 0;
+    list-style-type: none;
+}
+
+.LER-popup-tabs > li {
+    display: inline;
+    border: 1px solid #ccc;
+    padding: 0 0.2em;
+    margin: 0 0.2em 0 0;
+    cursor: pointer;
+    background-color: #eee;
+    color: #000;
+}
+
+.LER-popup-tabs a {
+    text-decoration: none;
+}
+
+.LER-popup-contents {
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+    padding: 0 0.1em;
+    min-height: 150px;
+}
+
+.LER-popup-contents > div {
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+    line-height: 125%;
+}
+
+.LER-popup-contents iframe {
+    width: 100%;
+    height: 225px;
+    border: 0;
+}
+
+.LER-popup-contents ul {
+    list-style-type: disc;
+    margin-left: 2em;
+}
+
+.LER-popup-contents li {
+    margin: 0 0 0.25em 0;
+}

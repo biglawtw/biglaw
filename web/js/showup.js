@@ -15,22 +15,40 @@
     var down           = options.down        || 'navbar-hide';
     var up             = options.up          || 'navbar-show';
     var btnHideShow    = options.btnHideShow || '.btn-hide-show';
-    var hideOffset     = options.offset      || 10;
+    var hideOffset     = options.offset      || 60;
     var previousScroll = 0;
+	var isHide		   = false;
 
     $(window).scroll(function () {
-      // var currentScroll = $(this).scrollTop();
-      if ($(this).scrollTop() > hideOffset) {
-        if ($(this).scrollTop() > previousScroll) {
-          // Action on scroll down
-          target.removeClass(up).addClass(down);
-        } else {
-          // Action on scroll up
-          target.removeClass(down).addClass(up);
-        }
-      }
-      previousScroll = $(this).scrollTop();
+		checkScrollTop();
     });
+	
+	$(window).resize(function () {
+		checkScrollTop();
+    });
+	
+	$(window).mousewheel(function () {
+		checkScrollTop();
+    });
+	
+	function checkScrollTop()
+	{
+		target.clearQueue();
+		target.stop();
+	  var currentScroll = $(this).scrollTop();
+      if (currentScroll > hideOffset) {
+        if (currentScroll > previousScroll) {
+          // Action on scroll down
+		  target.removeClass(up).addClass(down);
+        } else if (currentScroll < previousScroll) {
+          // Action on scroll up
+		  target.removeClass(down).addClass(up);
+        }
+      } else {
+		target.removeClass(down).addClass(up);
+	  }
+      previousScroll = $(this).scrollTop();
+	}
 
     // Toggle visibility of target on click
     $(btnHideShow).click(function () {
@@ -45,8 +63,8 @@
 
 // TODO: make customizable
 $(document).ready(function () {
-  var duration      = 200;
-  var showOffset    = 100;
+  var duration      = 420;
+  var showOffset    = 220;
   var btnFixed      = '.btn-fixed-bottom';
   var btnToTopClass = '.back-to-top';
 
@@ -66,4 +84,3 @@ $(document).ready(function () {
     return false;
   });
 });
-

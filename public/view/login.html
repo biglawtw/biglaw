@@ -1,0 +1,25 @@
+<div id="login" class="">
+    <div class="panel-heading">
+        <b>Login</b>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-12">
+                <input ng-model="username" class="form-control" name="username" type="text" placeholder="Username" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <input ng-model="password" class="form-control" name="password" type="password" placeholder="Password" />
+            </div>
+        </div>
+        <div>
+            <label class="checkbox">
+                <input type="checkbox" ng-model="remeberme" />Remeber me
+            </label>
+        </div>
+        <button type="button" ng-click="login()" class="btn btn-default btn-primary btn-block">
+            Login
+        </button>
+    </form>
+</div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>任務管理</title>
+    <link href="<?php resource('css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php resource('css/bootstrap-theme.css'); ?>" rel="stylesheet"/>
+    <link href="<?php resource('style/default.css');?>" rel="stylesheet"/>
+    <link href="<?php resource('style/bootstrap-prettify.css');?>" rel="stylesheet"/>
+    <script src="<?php resource('js/jquery-2.1.1.js'); ?>"></script>
+    <script src="<?=url('baseurljs' , 'spider')?>" type="text/javascript"></script>
+</head>
+<body>
+<?php partialView('header'); ?>
+<div class="container-fluid">
+    <div class="row main">
+        <div class="col-md-2 sidebar">
+            <?php partialView('sidebar' , $data); ?>
+        </div>
+        <div class="col-md-10 col-md-offset-2">
+            <div class="col-md-12">
+                <h2>打包下載裁判書</h2>
+                <p>
+                    *一行輸入一個ID
+                </p>
+                <form method="post" action="<?=url('downloadrefereebookpackage' , 'spider')?>">
+                    <button class="btn btn-primary">
+                        <span class="glyphicon glyphicon-download-alt"></span>
+                        下載
+                    </button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Refereebook ID</h3>
+                            <textarea name="refereebook" class="form-control AutoHeight"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Log ID</h3>
+                            <textarea name="log" class="form-control AutoHeight"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<?php partialView('footer'); ?>
+</body>
+<script src="<?php resource('js/bootstrap.js'); ?>"></script>
+</html>

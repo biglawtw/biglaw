@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteOptions MaxRedirects=10
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)\.([\d\D]+)$ public/$1.$2 [C]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule . . [F,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule ^(.*)$ index.php [L]
+
+    RewriteRule ^index(.*) index.php [L]
+
+</IfModule>
+

@@ -84,28 +84,20 @@
  * Docs Buttons
  */
 
-/* Demo buttons are all <button> tags, so
- * lets style these directly.
- */
-.back-to-top {
-  float: right !important;
-}
-
-
 /* Fixed button, bottom right */
 .btn-fixed-bottom {
   position: fixed;
-  bottom: 10px;
-  right: 20px;
+  bottom: 30px;
   display: none;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
 }
-
 
 /* Toggles navbar classes */
 .btn-hide-show {
   margin-right: 10px;
 }
-
 
 /* Light theme */
 .btn-light {
@@ -127,8 +119,6 @@
   background-color: rgba(0, 0, 0,.9);
 }
 
-
-
 /* Buttons displayed throughout the content */
 .btn-showup {
   position: relative;
@@ -137,7 +127,8 @@
   background-color: #463265;
   border-color: #3F2961;
 }
-.btn-showup:focus,
+
+.btn:focus,
 .btn-showup:hover,
 .btn-showup:focus {
   color: #fff;
@@ -145,4 +136,3 @@
   background-color: #39235A;
   border-color: #39235A;
 }
-

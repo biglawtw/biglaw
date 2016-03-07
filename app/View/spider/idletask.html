@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>任務管理</title>
+    <link href="<?php resource('css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php resource('css/bootstrap-theme.css'); ?>" rel="stylesheet"/>
+    <link href="<?php resource('style/default.css')?>" rel="stylesheet"/>
+
+    <script src="<?php resource('js/jquery-2.1.1.js'); ?>"></script>
+    <script src="<?=url('baseurljs' , 'spider')?>" type="text/javascript"></script>
+</head>
+<?php partialView('header'); ?>
+<div class="container-fluid">
+    <div class="row main">
+        <div class="col-md-2 sidebar">
+            <?php partialView('sidebar' , $data); ?>
+        </div>
+        <div class="col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">任務列表</h1>
+            <table id="taskTable" class="table">
+                <thead>
+                <tr>
+                    <th>任務編號</th>
+                    <th>任務時間</th>
+                    <th>法院</th>
+                    <th>類別</th>
+                    <th>任務加入時間</th>
+                    <th>子任務數量</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($data['task'] as $key => $value){ ?>
+                <tr>
+                    <td><?=$value['id']?></td>
+                    <td><?=$value['startDate']?> ~ <?=$value['endDate']?></td>
+                    <td><?=$value['CourtName']?></td>
+                    <td><?=$value['TypeName']?></td>
+                    <td><?=$value['addTime']?></td>
+                    <td><?=$value['SubTaskCount']?></td>
+                </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<?php partialView('footer'); ?>
+</body>
+<script src="<?php resource('js/bootstrap.js'); ?>"></script>
+</html>

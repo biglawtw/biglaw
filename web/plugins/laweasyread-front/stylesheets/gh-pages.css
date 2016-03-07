@@ -1,0 +1,13 @@
+blockquote {
+    font-size: medium;
+}
+fieldset {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+}
+legend {
+    font-weight: bold;
+}
+header h1 a {
+    color: inherit;
+}

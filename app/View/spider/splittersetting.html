@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="bl-spider">
+<head>
+    <meta charset="utf-8"/>
+    <title>任務管理</title>
+    <link href="<?php resource('css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php resource('css/bootstrap-theme.css'); ?>" rel="stylesheet"/>
+    <link href="<?php resource('style/default.css');?>" rel="stylesheet"/>
+    <link href="<?php resource('style/bootstrap-prettify.css');?>" rel="stylesheet" />
+
+    <script src="<?php resource('js/jquery-2.1.1.js'); ?>"></script>
+    <script src="<?=url('baseurljs' , 'spider')?>" type="text/javascript"></script>
+    <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js" defer="defer"></script>
+    <script src="<?php resourcE('js/webjs/splitterSetting.js');?>" ></script>
+</head>
+<body>
+<?php partialView('header'); ?>
+<div class="container-fluid">
+    <div class="row main">
+        <div class="col-md-2 sidebar">
+            <?php partialView('sidebar' , $data); ?>
+        </div>
+        <div class="col-md-10 col-md-offset-2">
+            <h2>分析器設定</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <h4 class="panel-heading">分析器開關</h4>
+
+                        <div class="panel-body">
+                            <div id="loaddingSplitter" class="loadding">
+                                <img src="<?php resource('image/loading.gif');?>"/>
+                            </div>
+                            <div id="switchSplitter" class="btn-group btn-group-lg">
+                                <button type="button" id="switchSplitterOn" class="btn btn-default btn-primary">開
+                                </button>
+                                <button type="button" id="switchSplitterOFf" class="btn btn-default btn-danger">關
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <h4 class="panel-heading">更換分析器</h4>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div id="save-success" class="col-md-12">
+                                    <p class="alert alert-success">
+                                        儲存成功
+                                    </p>
+                                </div>
+                                <div id="save-error" class="col-md-12">
+                                    <p class="alert alert-danger">
+                                        儲存失敗
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <select id="selectSplitter" class="form-control">
+                                    <?php foreach($data['splitterList'] as $key => $value){ ?>
+    <option value="<?=$value['id']?>"><?=$value['filename']?> / <?=$value['uploadtime']?></option>
+                                    <?php } ?>
+</select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="saveSplitter" class="btn btn-default btn-primary">
+                                        儲存
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <h4 id="splitterFilename" class="panel-heading"></h4>
+
+                        <div class="panel-body">
+                            <pre id="splitterContent" class="prettyprint linenums:1"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php partialView('footer'); ?>
+</body>
+<script src="<?php resource('js/bootstrap.js'); ?>"></script>
+<script>
+
+</script>
+
+</html>

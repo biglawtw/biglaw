@@ -1,0 +1,63 @@
+body {
+    padding-top: 50px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    border-right: 1px solid #eee;
+    padding-bottom: 50px;
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+    margin-right: -21px;
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.nav-sidebar > .active > a {
+    color: #fff;
+    background-color: #428bca;
+}
+
+.value {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.stat {
+    border-right: 1px solid #e8e9ee;
+    font-size: 14pt;
+    text-align: right;
+    padding: 14px;
+}
+
+.chart {
+    padding: 10px;
+}
+
+#login{
+    width:500px;
+}
+
+.main{
+    margin-bottom: 50px;
+}
+
+#refereebookData{
+    font-family: 細明體;
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>法規亦毒氣 by g0v</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>法規亦毒氣</h1>
+        <h2>an extension for Chrome browser to view Taiwan&#39;s law articles/websites easier</h2>
+        <a href="https://github.com/g0v/laweasyread-front" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h1>
+
+<ul>
+<li>Parse the contents of webpages to view Taiwan's law articles/websites easier.</li>
+<li>related with <a href="https://github.com/g0v/laweasyread">g0v/laweasyread</a> but functions differently and not combined together yet.</li>
+</ul><p>可將網頁中的法規、條文、大法官解釋、判決字號均加上連結。使用方式有三：</p>
+
+<ul>
+<li>安裝為 <a href="https://addons.mozilla.org/zh-TW/firefox/addon/laweasyread/">Firefox 附加元件</a>（<a href="http://g0v.github.io/laweasyread-front/dist/laweasyread.xpi">備份</a>）或<a href="https://chrome.google.com/webstore/detail/iedodmlnmhobigohbkalkkjlbmdkjalj">Google 瀏覽器擴充功能</a>（<a href="http://g0v.github.io/laweasyread-front/browser.html">測試頁面</a>）</li>
+<li>在<a href="http://g0v.github.io/laweasyread-front/userInput.html">轉換頁面</a>貼上法律相關網頁或檔案的內容文章，可以立即將該文章顯示為有連結的樣貌。</li>
+<li>網頁內嵌JavaScript方式，以使未安裝瀏覽器外掛的網友亦能看到自動加上連結的法規和條文。（<a href="http://g0v.github.io/laweasyread-front/embed.html">示範頁</a>）</li>
+</ul><h2>
+<a name="capability" class="anchor" href="#capability"><span class="octicon octicon-link"></span></a>Capability</h2>
+
+<p>網頁中提到法規名稱或是條文時：</p>
+
+<ul>
+<li>將法規名稱加上連往<a href="http://law.moj.gov.tw/">全國法規資料庫</a>看該法規全文的網頁連結。</li>
+<li>將法條連向<a href="http://law.moj.gov.tw/">全國法規資料庫</a>看該些條文。</li>
+<li>提到大法官解釋時，即連向該號解釋的官方網頁。</li>
+</ul><p>如使用<a href="https://chrome.google.com/webstore/detail/iedodmlnmhobigohbkalkkjlbmdkjalj">Google 瀏覽器外掛</a>，亦能：</p>
+
+<ul>
+<li>運作於Facebook、<a href="http://ly.g0v.tw.jit.su/">零時政府立法院</a>、<a href="http://www.pingluweb.com/">評律網</a>等動態更新的內容的網頁機制（需點選網址列的按鈕）。</li>
+<li>滑鼠移動到法規名稱上時，跳出浮動視窗顯示其沿革（立法、修法史）。</li>
+<li>滑鼠移動到條文號碼上方時，跳出浮動視窗顯示該條文內容。</li>
+<li>將下列網站稍做排版，使易於閱讀：
+
+<ul>
+<li><a href="http://www.judicial.gov.tw/constitutionalcourt/p03.asp">大法官解釋</a></li>
+<li><a href="http://lis.ly.gov.tw/lgcgi/lglaw">立法院法律系統</a></li>
+<li><a href="http://jirs.judicial.gov.tw/FJUD/">司法院裁判書查詢</a></li>
+</ul>
+</li>
+<li>自動送出裁判書查詢</li>
+</ul><h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<ul>
+<li>大法官解釋（<a href="http://www.judicial.gov.tw/constitutionalcourt/p03_01.asp?expno=617">範例網頁連結</a>）
+<img src="http://images.plurk.com/kAGZ-22KieXBnFHCtsKe8DBiD8u.jpg" alt="Judicial Interpretation">
+</li>
+<li>立法院法律系統（<a href="http://lis.ly.gov.tw/lghtml/lawstat/reason2/01183100110400.htm">範例網頁連結</a>）
+<img src="http://images.plurk.com/kAGZ-5bvO4HGPifAXwkDU9CAs3y.jpg" alt="Legislative Yuan">
+</li>
+<li>全國法規資料庫（<a href="http://law.moj.gov.tw/LawClass/LawSearchNo.aspx?PC=B0000001&amp;SNo=1079.4,1079.5">範例網頁連結</a>）
+<img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-ash4/1014200_10152542008401393_14309567_n.jpg" alt="Laws &amp; Regulations Database">
+</li>
+<li>0.4.6 版新增（僅Chrome支援）
+<img src="https://f.cloud.github.com/assets/4002443/1027780/1cc38ae8-0e78-11e3-85c9-794224fed793.jpg" alt="0.4.6版截圖">
+</li>
+</ul><h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<h2>
+<a name="browser-extension" class="anchor" href="#browser-extension"><span class="octicon octicon-link"></span></a>Browser Extension</h2>
+
+<ul>
+<li>Firefox 瀏覽器請至<a href="https://addons.mozilla.org/zh-TW/firefox/addon/laweasyread/">Firefox 附加元件</a>安裝；如連結失效（參閱 <a href="https://github.com/g0v/laweasyread-front/issues/4">issue #4</a>），請改安裝<a href="http://g0v.github.io/laweasyread-front/dist/laweasyread.xpi">XPI 檔案</a>。</li>
+<li>Google 瀏覽器請至<a href="https://chrome.google.com/webstore/detail/iedodmlnmhobigohbkalkkjlbmdkjalj">Chrome 線上應用程式商店</a>安裝。</li>
+</ul><p>可比對安裝前後<a href="http://g0v.github.io/laweasyread-front/browser.html">測試頁面</a>的顯示差異。</p>
+
+<h2>
+<a name="embed-javascript-in-websites-or-blogs" class="anchor" href="#embed-javascript-in-websites-or-blogs"><span class="octicon octicon-link"></span></a>Embed JavaScript in websites or blogs</h2>
+
+<p><a href="http://g0v.github.io/laweasyread-front/embed.html">內嵌JavaScript 示範頁</a>。</p>
+
+<p>在網頁HTML原始碼中的<code>&lt;/head&gt;</code>前加入</p>
+
+<div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"http://g0v.github.io/laweasyread-front/stylesheets/main.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://g0v.github.io/laweasyread-front/dist/laweasyread.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://g0v.github.io/laweasyread-front/javascripts/embedded2.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h2>
+<a name="warning" class="anchor" href="#warning"><span class="octicon octicon-link"></span></a>Warning</h2>
+
+<p>警告：部落客於編輯網誌時，請暫時關閉本外掛。</p>
+
+<h1>
+<a name="disclaimer" class="anchor" href="#disclaimer"><span class="octicon octicon-link"></span></a>Disclaimer</h1>
+
+<p>甚麼都不負責。</p>
+
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p><a href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a>再加上一條：
+被授權人於出版發行、散布、再授權及販售軟體及軟體的副本時，應於MIT授權條款上方或下方加上此規則，並：</p>
+
+<ul>
+<li>陳述被授權人對於一個以上之公共議題之立場；或</li>
+<li>附上與其立場類似之文章之永久連結。</li>
+</ul><p>此軟體此版本設定之公共議題為「性別」，立場為「性解放」，支持十歲以上智識者均得自主與人發生性行為與性交易，「性忠貞」並不是「道德」的一部份。（參閱<a href="http://phiphicake.blogspot.tw/2013/06/blog-post_4.html">反守貞地圖．哲學哲學雞蛋糕</a>。惟亦請留意諸多國家規定與未達法定年齡者合意性交、性交易仍需受刑事或行政處罰。於中華民國，與未滿十六歲者合意猥褻或性交、引誘未滿十八歲者為猥褻或性交，以及與任何人為有對價之性交或猥褻行為，均為法律所禁止。參閱<a href="http://law.moj.gov.tw/LawClass/LawSingle.aspx?Pcode=C0000001&amp;FLNO=227">刑法§227</a>、<a href="http://law.moj.gov.tw/LawClass/LawSearchNo.aspx?PC=D0050001&amp;SNo=2,49,97">兒童及少年福利與權益保障法§2 、 §49第9款 、 §97第1項</a>、<a href="http://law.moj.gov.tw/LawClass/LawSearchNo.aspx?PC=D0050023&amp;SNo=2,22,23">兒童及少年性交易防制條例§2 、 §22 、 §23</a>、<a href="http://law.moj.gov.tw/LawClass/LawSingle.aspx?Pcode=D0080067&amp;FLNO=80">社會秩序維護法§80</a>。）</p>
+
+<h2>
+<a name="license-explanation" class="anchor" href="#license-explanation"><span class="octicon octicon-link"></span></a>License Explanation</h2>
+
+<ul>
+<li>於其軟體再版時，得變更議題與立場、連結。</li>
+<li>軟體之使用與修改者，無須同意原軟體授權條款中，基於本規則而對特定議題表態之立場。</li>
+</ul><h1>
+<a name="notices" class="anchor" href="#notices"><span class="octicon octicon-link"></span></a>Notices</h1>
+
+<ul>
+<li>全國法規資料庫有收錄的均會加上連結－－除非原本已經是連結。</li>
+<li>純文字元件如 <code>TEXTAREA</code> 等會跳過不處理，列表見<code>LER.js</code>的<code>skippingTags</code>。</li>
+<li>在內嵌其他網域的框架時（如Facebook的留言或按讚外掛），會有瀏覽器警告（似乎不影響運作）。</li>
+</ul><h1>
+<a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h1>
+
+<ul>
+<li>可能與WYSIWYG編輯器的相互干擾!!!!</li>
+<li>會發生「漩渦鳴人的 §8 尾巴出現了」和「我國的 §3 國道走山事件」</li>
+<li>未能妥善處理以換行字元或<code>BR</code>標籤來排版的網頁（如<a href="http://jirs.judicial.gov.tw/FJUD/">司法院裁判書查詢</a>）。</li>
+</ul><h1>
+<a name="development" class="anchor" href="#development"><span class="octicon octicon-link"></span></a>Development</h1>
+
+<h2>
+<a name="first-idea" class="anchor" href="#first-idea"><span class="octicon octicon-link"></span></a>First Idea</h2>
+
+<p>原本是以字串取代的方式去改變<code>document.body.innerHTML</code>，但發現有三個難處：</p>
+
+<ul>
+<li>有（類似）onLoad function的網頁（如「全國法規資料庫」的首頁）即會無後續動作。</li>
+<li>不知道要怎麼樣避開HTML tag的屬性中的字串，特別是要提防屬性字串中又包含特殊字元的情形。</li>
+<li>不知道怎麼偵測「是否已在<a></a>中」，困境同上。</li>
+</ul><h2>
+<a name="current-scheme" class="anchor" href="#current-scheme"><span class="octicon octicon-link"></span></a>Current Scheme</h2>
+
+<p>用遞迴方式跑過整個HTML的DOM tree，抓出textNode來處理。
+因此，勢必得用<code>document.createElement</code>和<code>Node#appendChild</code>等DOM方法，而不能修改<code>Element#innerHTML</code>。</p>
+
+<h2>
+<a name="algorithm" class="anchor" href="#algorithm"><span class="octicon octicon-link"></span></a>Algorithm</h2>
+
+<p>參閱<code>LER.js</code>，把每個「只含文字的節點」（<code>TEXT_NODE</code>)代換成一串新的節點。</p>
+
+<ul>
+<li>
+<code>parseElement()</code>嘗試處理<code>document.body</code>的每一個child。
+
+<ul>
+<li>把非純文字的child再丟給<code>parseElement()</code>去recursion；</li>
+<li>把純文字的child代換為丟去<code>parseText()</code>而得到的node array</li>
+</ul>
+</li>
+<li>
+<code>parseText()</code>
+
+<ul>
+<li>用規則一的正規表示式把字串分段，把不匹配的部份再丟給規則二</li>
+<li>規則二的正規表示式不匹配的部份，再丟給規則三</li>
+<li>依此類推，直到沒有規則可再套用</li>
+<li>所有規則均跑完後，即回傳陣列，回到<code>parseElement()</code>把原本的文字節點替換成新的節點列。</li>
+</ul>
+</li>
+<li>將 <code>parseInt()</code> 改寫為支援中文數字，參閱<code>parseInt.js</code> （授權條款同上）</li>
+<li>關於「多個條號」的處理，參閱<code>LER.js</code>中註解文字「條號比對－－支援多條文」以下</li>
+</ul><h2>
+<a name="links-to-regulations" class="anchor" href="#links-to-regulations"><span class="octicon octicon-link"></span></a>Links to regulations</h2>
+
+<p>將<a href="http://law.moj.gov.tw/">全國法規資料庫</a>中有收錄的（包含「已廢止法規」）均加上連結。其方法為：</p>
+
+<ul>
+<li>將<a href="https://github.com/g0v/laweasyread-data">g0v/laweasyread-data</a>的<code>data/pcode.json</code>改為本專案的<code>pcode.js</code>（就只是灌進一個變數中）</li>
+<li>將名稱中只有中文、沒有標點符號的法規（約九千個）全部以'|'為連接符號，由長至短串成一個字串（共近20萬字），生成一個巨大的正規表示式。</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/g0v/laweasyread-front/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/g0v/laweasyread-front/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/g0v/laweasyread-front"></a> is maintained by <a href="https://github.com/g0v">g0v</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-1747270-18");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>

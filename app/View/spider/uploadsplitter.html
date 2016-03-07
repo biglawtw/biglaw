@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="bl-spider">
+<head>
+    <meta charset="utf-8" />
+    <title>任務管理</title>
+    <link href="<?php resource('css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php resource('css/bootstrap-theme.css'); ?>" rel="stylesheet"/>
+    <link href="<?php resource('style/default.css')?>" rel="stylesheet"/>
+
+    <script src="<?php resource('js/jquery-2.1.1.js'); ?>"></script>
+    <script src="<?=url('baseurljs' , 'spider')?>" type="text/javascript"></script>
+</head>
+<body>
+<?php partialView('header'); ?>
+<div class="container-fluid">
+    <div class="row main">
+        <div class="col-md-2 sidebar">
+            <?php partialView('sidebar' , $data); ?>
+        </div>
+        <div class="col-md-10 col-md-offset-2">
+            <div class="col-md-12">
+                <h2>分析器上傳</h2>
+                <?php
+                if($_GET['message']!=""){
+                ?>
+                    <div class="alert alert-info"><?=$_GET['message']?></div>
+                    <?php
+                }
+                ?>
+                <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?=url('douploadsplitter' , 'spider')?>">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">選擇檔案</label>
+                        <div class="col-md-10">
+                            <input name="splitter" class="form-control" type="file" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button class="btn btn-primary btn-default">
+                                上傳
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<?php partialView('footer'); ?>
+</body>
+<script src="<?php resource('js/bootstrap.js'); ?>"></script>
+</html>

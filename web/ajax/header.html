@@ -1,0 +1,51 @@
+<!--header-->
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top btn-lg unselectable" role="navigation">
+  <div class="container">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">開關導航</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a href="#search"><span class="navbar-brand"><i class="fa fa-bar-chart-o"></i> BigLaw <small class="text-muted badge">beta</small></span></a>
+	</div>
+	<div class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav">
+		<li class="dropdown">
+		  <a href="#" class="dropdown-toggle collapse" data-toggle="dropdown">法規資料庫 <b class="caret"></b></a>
+		  <ul class="dropdown-menu">
+			<li><a href="http://law.moj.gov.tw/LawClass/LawClassListN.aspx?TY=01000000" target="_blank">憲法</a></li>
+			<li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=B0000001" target="_blank">民法</a></li>
+			<li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=B0010001" target="_blank">民事訴訟法及相關法</a></li>
+			<li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=C0000001" target="_blank">刑法</a></li>
+			<li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=C0010001" target="_blank">刑事訴訟法及相關法</a></li>
+			<li><a href="http://law.moj.gov.tw/LawClass/LawContent.aspx?PCODE=A0030055" target="_blank">行政法及行政訴訟相關法</a></li>
+		  </ul>
+		</li>
+	  </ul>
+	<form role="form" class="navbar-form navbar-left" id="lawsearch" action="/">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="條文快搜" id="lawkeyword">
+		    </div>
+		<button type="submit" class="btn btn-default">搜尋</button>
+	</form>
+	</div><!--/.nav-collapse -->
+  </div>
+</div>
+<!--header-->
+<script>
+$().showUp('.navbar', {
+	upClass: 'navbar-hide',
+	downClass: 'navbar-show'
+});
+$("#lawsearch").on("submit", function(e) {
+	e.preventDefault();
+	var lawkeyword = $("#lawkeyword").val();
+	if(lawkeyword && lawkeyword != "") {
+		var url = "http://law.moj.gov.tw/Law/LawSearchResult.aspx?p=A&t=A1A2E1F1&k1=" + $("#lawkeyword").val();
+		window.open(url);
+	}
+});
+</script>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>輸入立即轉換 :: 法規亦毒氣</title>
+    <base target="_blank">
+    <link href="stylesheets/gh-pages.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+    <script src="javascripts/parseInt.js" type="text/javascript"></script>
+    <script src="javascripts/pcodes.js" type="text/javascript"></script>
+    <script src="javascripts/aliases.js" type="text/javascript"></script>
+    <script src="javascripts/lyIDs.js" type="text/javascript"></script>
+    <script src="javascripts/courts.js" type="text/javascript"></script>
+    <script src="javascripts/LER.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function parse() {
+            var o = document.getElementById("output");
+            var h = document.getElementById("html");
+            var input = document.getElementById("input").value;
+            if(!document.getElementById("htmlspecialchars").checked) input = input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            if(document.getElementById("nl2br").checked) input = input.replace(/\n/g, "<br />\n");
+            o.innerHTML = input;
+            LER.parse(o);
+            h.value = o.innerHTML;
+            if(typeof console != "undefined") h.style.height = "";
+            h.style.height = h.scrollHeight + 'px';
+        }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1><a href="./" target="_self">法規亦毒氣</a></h1>
+        <h2>an extension for browsers to view Taiwan's law articles/websites easier</h2>
+        <a href="https://github.com/g0v/laweasyread-front" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+
+
+    <p>本頁面為【<a href="index.html">法規亦毒氣</a>】的應用，請在左方輸入或貼上法律相關文章（可複製自其它網頁或檔案），右方即會出現將法規名稱與條號加上連結的樣貌。</p>
+    <div style="clear: both; height: 2em;"><button id="button" style="display: none;">隱藏輸入框</button></div>
+    <script type="text/javascript">
+        document.getElementById("button").onclick = function() {
+            var toHide = true;
+            return function() {
+                if(toHide) {
+                    document.getElementById("inputContainer").style.display = "none";
+                    document.getElementById("outputContainer").style.width = "95%";
+                    this.innerHTML = "顯示輸入框";
+                }
+                else {
+                    document.getElementById("inputContainer").style.display = "";
+                    document.getElementById("outputContainer").style.width = "45%";
+                    this.innerHTML = "隱藏輸入框";
+                }
+                toHide = !toHide;
+            };
+        }();
+    </script>
+    <fieldset id="inputContainer" style="float: left; width: 45%;">
+        <legend>輸入純文字</legend>
+        <fieldset>
+            <legend>轉換設定</legend>
+            <label><input id="auto" type="checkbox" checked="checked" onclick="document.getElementById('manually').style.display = this.checked ? 'none' : '';" />自動轉換</label>
+            <button id="manually" style="display: none;" onclick="parse();">手動轉換</button>
+            <br />
+            <label><input id="htmlspecialchars" type="checkbox" onclick="parse();" />解譯HTML碼</label>
+            <label><input id="nl2br" type="checkbox" checked="checked" onclick="parse();" />依原文換行處換行</label>
+        </fieldset>
+        <textarea id="input" style="width: 100%; background-color: #ccc;" onkeyup="
+            document.getElementById('button').style.display = '';
+            if(typeof console != 'undefined') this.style.height = '';
+            this.style.height = this.scrollHeight + 'px';
+            if(document.getElementById('auto').checked) parse();
+        ">（在這裡輸入文字）</textarea>
+    </fieldset>
+    <fieldset id="outputContainer" style="float: right; width: 45%;">
+        <legend>轉換結果</legend>
+        <div id="output"></div>
+    </fieldset>
+    <fieldset id="HTML" style="clear:both;">
+        <legend>HTML（可用於貼到部落格、支援HTML的留言版）</legend>
+        <textarea id="html" style="width: 100%; background-color: #ccc;"></textarea>
+    </fieldset>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/g0v/laweasyread-front/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/g0v/laweasyread-front/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/g0v/laweasyread-front"></a> is maintained by <a href="https://github.com/g0v">g0v</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a> and then edited.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-1747270-18");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
